@@ -6,7 +6,8 @@
     "node": ">=10"
   },  
   "scripts": {
-    "start": "./node_modules/.bin/nodemon dist/index.js",
+    "serve": "./node_modules/.bin/nodemon dist/index.js",
+    "start": "npm run tsc-watch & npm run serve",
     "tsc": "tsc",
     "tsc-watch": "tsc -w"
   },

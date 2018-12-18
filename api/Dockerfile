@@ -8,6 +8,8 @@ WORKDIR /app
 
 RUN yarn
 
+RUN yarn tsc
+
 EXPOSE $API_PORT
 
 CMD [ "node", "dist/index.js" ]

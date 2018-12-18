@@ -5,6 +5,10 @@ services:
     ports:
       - ${API_PORT}:${API_PORT}
     volumes:
-      - ./api/dist:/app/dist
+      - ./api/src:/app/src  
     command: ["yarn", "start"]
+    environment:
+      SERVER_NAME: ${SERVER_NAME}
+      API_PORT: ${API_PORT}
+      NODE_ENV: ${APP_ENV}
  

@@ -1,8 +1,8 @@
+import * as Server from "./server"
 
-import { Person } from "./Person"
+(async() => {
+    const server = await Server.init()
 
-const person = new Person("Ivan")
-
-setInterval(() => {
-    person.sayName()
-}, 100)
+    await server.start()
+    console.log("Server started")
+})()
