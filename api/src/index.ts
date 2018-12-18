@@ -1,8 +1,8 @@
-import * as Server from "./server"
+import * as Server from "./server";
 
-(async() => {
-    const server = await Server.init()
+(async () => {
+    const server = await Server.init();
 
-    await server.start()
-    console.log("Server started")
-})()
+    await server.start();
+    console.log("Server started");
+})();

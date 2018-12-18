@@ -1,24 +1,23 @@
-import * as Hapi from "hapi"
+import * as Hapi from "hapi";
 
 export async function init(): Promise<Hapi.Server> {
     try {
-        const port = process.env.API_PORT || 8080
+        const port = process.env.API_PORT || 8080;
         const server = new Hapi.Server({
-            debug: { request: ['error'] },
-            port: port,
+            debug: { request: ["error"] },
+            port,
             routes: {
                 cors: {
-                    origin: ["*"]
-                }
-            }
-        })
+                    origin: ["*"],
+                },
+            },
+        });
 
-        return server
+        return server;
     } catch (err) {
-        console.log("Error starting server: ", err)
-        process.env.NODE_ENV === 'production'
+        console.log("Error starting server: ", err);
+        process.env.NODE_ENV === "production"
         ? process.exit(1)
-        : process.kill(process.pid, 'SIGUSR2')
+        : process.kill(process.pid, "SIGUSR2");
     }
 }
-  
