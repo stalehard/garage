@@ -1,17 +1,7 @@
-class Person {
-    name: string 
 
-    constructor(name: string) {
-        this.name = name
-    }
+import { Person } from "./Person"
 
-    sayName() {
-       console.log(this.name)
-    }
-}
-
-
-const person = new Person('Vasya')
+const person = new Person("Ivan")
 
 setInterval(() => {
     person.sayName()

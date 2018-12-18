@@ -1,19 +1,28 @@
 {
-  "name": "garage",
+  "name": "api",
   "version": "0.1.0",
   "description": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stalehard/garage.git"
-  },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
+  },  
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon dist/index.js",
+    "tsc": "tsc",
+    "tsc-watch": "tsc -w"
   },
-  "scripts": {},
-  "dependencies": {},
-  "author": {
-    "name": "Andrew Ivanov",
-    "url": "https://github.com/stalehard"
+  "dependencies": {
+    "hapi": "17.4.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.1",
+    "@types/boom": "7.2.0",
+    "@types/hapi": "^17.4.0",
+    "@types/joi": "13.0.8",
+    "@types/jsonwebtoken": "7.2.6",
+    "@types/node": "9.4.7",
+    "nodemon": "^1.18.9",
+    "tslint": "5.9.1",
+    "typescript": "^3.2.0"
   },
   "license": "MIT"
 }

@@ -10,4 +10,4 @@ RUN yarn
 
 EXPOSE $API_PORT
 
-CMD [ "node", "src/index.js" ]
+CMD [ "node", "dist/index.js" ]
