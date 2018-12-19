@@ -1,17 +1,9 @@
 import * as Hapi from "hapi";
+import * as Configs from "../config";
 
 export async function init(): Promise<Hapi.Server> {
     try {
-        const port = process.env.API_PORT || 8080;
-        const server = new Hapi.Server({
-            debug: { request: ["error"] },
-            port,
-            routes: {
-                cors: {
-                    origin: ["*"],
-                },
-            },
-        });
+        const server = new Hapi.Server(Configs.getServerConfig());
 
         return server;
     } catch (err) {
