@@ -1,5 +1,5 @@
 import * as Hapi from "hapi";
-import * as Configs from "../config";
+import * as Configs from "./config";
 
 export async function init(): Promise<Hapi.Server> {
     try {

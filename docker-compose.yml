@@ -1,12 +1,14 @@
 version: '3'
 services:
   api:
-    build: ./api
+    build: 
+      context: .
+      dockerfile: Dockerfile-api
     ports:
       - ${API_PORT}:${API_PORT}
     volumes:
       - ./api/src:/app/src
-      - ./config:/app/config
+      - ./config:/app/src/config
     command: ["yarn", "start"]
     environment:
       SERVER_NAME: ${SERVER_NAME}
@@ -17,6 +19,7 @@ services:
       DB_USER: ${POSTGRES_USER}
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       DB_DATABASE: ${POSTGRES_DB}
+
   db:
     restart: on-failure
     image: postgres:10-alpine
