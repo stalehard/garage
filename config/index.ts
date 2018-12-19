@@ -25,5 +25,5 @@ export interface IServerConfigurations {
 }
 
 export function getServerConfig(): IServerConfigurations {
-    return config.server
+    return config.server;
 }
