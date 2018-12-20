@@ -6,9 +6,12 @@
     "node": ">=10"
   },
   "scripts": {
-    "lint": "tslint -c tslint.json 'api/src/**/*.ts' --fix & tslint -c tslint.json 'config/*.ts' --fix"
+    "lint": "tslint -c tslint.json 'api/src/**/*.ts' --fix & tslint -c tslint.json 'config/*.ts' --fix & tslint -c tslint.json 'models/*.ts' --fix"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/sequelize": "^4.27.33",
+    "sequelize": "^4.42.0"
+  },
   "author": {
     "name": "Andrey Ivanov",
     "url": "https://github.com/stalehard"
@@ -16,9 +19,9 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "9.4.7",
+    "husky": "^1.2.1",
     "tslint": "^5.12.0",
-    "typescript": "^3.2.2",
-    "husky": "^1.2.1"
+    "typescript": "^3.2.2"
   },
   "husky": {
     "hooks": {

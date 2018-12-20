@@ -9,9 +9,20 @@
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {
-            "*": [
-                "node_modules/*",
+            "config": [
+                "src/config/index"
+            ],
+            "types/*": [
                 "src/types/*"
+            ],
+            "models/*": [
+                "src/models/*"
+            ],
+            "models": [
+                "src/models/index"
+            ],
+            "*": [
+                "node_modules/*"
             ]
         }
     },

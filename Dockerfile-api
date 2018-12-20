@@ -4,10 +4,12 @@ COPY api/ /app/
 
 COPY config/ /app/src/config/
 
+COPY models/ /app/src/models/
+
 WORKDIR /app
 
 RUN apk add --no-cache curl && yarn && yarn tsc
 
-EXPOSE $API_PORT
+EXPOSE 8080
 
 CMD [ "node", "dist/index.js" ]

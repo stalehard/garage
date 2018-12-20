@@ -4,11 +4,14 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile-api
+    depends_on:
+      - db
     ports:
       - ${API_PORT}:${API_PORT}
     volumes:
       - ./api/src:/app/src
       - ./config:/app/src/config
+      - ./models:/app/src/models
     command: ["yarn", "start"]
     environment:
       SERVER_NAME: ${SERVER_NAME}
