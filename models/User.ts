@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import { SequelizeAttributes } from "types/SequelizeAttributes";
+import { SequelizeAttributes } from "../types/SequelizeAttributes";
 
 export interface IUserAttributes {
   id?: number;

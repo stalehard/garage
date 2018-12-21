@@ -1,3 +1,4 @@
+import Hapi from "hapi";
 import path from "path";
 import Sequelize from "sequelize";
 
@@ -34,17 +35,6 @@ const config = {
       },
 };
 
-export interface IServerConfigurations {
-    port: number;
-    host: string;
-    routes: {
-        cors: boolean,
-        files: {
-            relativeTo: string,
-        },
-    };
-}
-
 export interface IDbConfigurations {
     database: string;
     username: string;
@@ -66,7 +56,7 @@ export interface IDbConfigurations {
     };
 }
 
-export function getServerConfig(): IServerConfigurations {
+export function getServerConfig(): Hapi.ServerOptions {
     return config.server;
 }
 

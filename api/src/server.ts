@@ -1,9 +1,9 @@
-import * as Configs from "config";
 import Hapi from "hapi";
+import { IDbInterface } from "./models";
 
-export async function init(): Promise<Hapi.Server> {
+export async function init(config: Hapi.ServerOptions, db: IDbInterface): Promise<Hapi.Server> {
     try {
-        const server = new Hapi.Server(Configs.getServerConfig());
+        const server = new Hapi.Server(config);
 
         return server;
     } catch (err) {
