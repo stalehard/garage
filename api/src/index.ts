@@ -4,12 +4,19 @@ import { createModels } from "./models";
 import * as Server from "./server";
 
 (async () => {
-    const db = createModels(Configs.getDbConfig());
+    try {
+        const db = createModels(Configs.getDbConfig());
 
-    await db.sequelize.sync();
+        await db.sequelize.sync();
 
-    const server = await Server.init(Configs.getServerConfig(), db);
+        const server = await Server.init(Configs.getServerConfig(), db);
 
-    await server.start();
-    console.log("Server started");
+        await server.start();
+        console.log("Server started");
+    } catch (err) {
+        console.log("Error starting server: ", err);
+        process.env.NODE_ENV === "production"
+        ? process.exit(1)
+        : process.kill(process.pid, "SIGUSR2");
+    }
 })();
