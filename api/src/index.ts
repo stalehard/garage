@@ -5,6 +5,8 @@ import * as Server from "./server";
 
 (async () => {
     try {
+        console.log(process.cwd());
+
         const db = createModels(Configs.getDbConfig());
 
         await db.sequelize.sync();
