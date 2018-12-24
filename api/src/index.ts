@@ -1,5 +1,7 @@
-import * as Configs from "./config";
-import { createModels } from "./models";
+require("module-alias/register");
+
+import * as Configs from "@config";
+import { createModels } from "@models";
 
 import * as Server from "./server";
 

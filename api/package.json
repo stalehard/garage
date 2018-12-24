@@ -18,6 +18,7 @@
     "hapi": "17.4.0",
     "hapi-swagger": "^9.3.0",
     "inert": "^5.1.2",
+    "module-alias": "^2.1.0",
     "pg": "^7.7.1",
     "sequelize": "^4.42.0",
     "vision": "^5.4.4"
@@ -35,6 +36,13 @@
     "nodemon": "^1.18.9",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
+  },
+  "_moduleAliases": {
+    "@config": "dist/config/",
+    "@models": "dist/models/",
+    "@models/User": "dist/models/User",
+    "@models/Exam": "dist/models/Exam",    
+    "@interfaces": "dist/interfaces/"
   },
   "license": "MIT"
 }

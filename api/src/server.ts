@@ -1,6 +1,6 @@
+import { IDbInterface } from "@models";
 import Hapi from "hapi";
 import { IServerState } from "./interfaces";
-import { IDbInterface } from "./models";
 import { plugins } from "./plugins";
 
 export async function init(config: Hapi.ServerOptions, db: IDbInterface): Promise<Hapi.Server> {

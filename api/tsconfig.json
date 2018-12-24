@@ -2,12 +2,18 @@
     "compilerOptions": {
         "module": "commonjs",
         "esModuleInterop": true,
-        "target": "es6",
+        "target": "esnext",
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "@config": ["src/config"],
+            "@models": ["src/models"],
+            "@models/*": ["src/models/*"],
+            "@interfaces": ["src/interfaces"]
+        }
     },
     "include": ["src/**/*"]
 }
