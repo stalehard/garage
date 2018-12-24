@@ -5,8 +5,11 @@ import {  IUserAttributes, IUserInstance, UserFactory } from "./User";
 export interface IDbInterface {
   sequelize: Sequelize.Sequelize;
   Sequelize: Sequelize.SequelizeStatic;
-  User: Sequelize.Model<IUserInstance, IUserAttributes>;
-  Exam: Sequelize.Model<IExamInstance, IExamAttributes>;
+  models: {
+    User: Sequelize.Model<IUserInstance, IUserAttributes>;
+    Exam: Sequelize.Model<IExamInstance, IExamAttributes>;
+    [propName: string]: any;
+  };
 }
 
 export const createModels = (sequelizeConfig: any): IDbInterface => {
@@ -16,13 +19,15 @@ export const createModels = (sequelizeConfig: any): IDbInterface => {
   const db: IDbInterface = {
     sequelize,
     Sequelize,
-    User: UserFactory(sequelize, Sequelize),
-    Exam: ExamFactory(sequelize, Sequelize),
+    models: {
+      User: UserFactory(sequelize, Sequelize),
+      Exam: ExamFactory(sequelize, Sequelize),
+    },
   };
 
-  Object.keys(db).forEach((modelName) => {
-    if (db[modelName].associate) {
-      db[modelName].associate(db);
+  Object.keys(db.models).forEach((modelName) => {
+    if (db.models[modelName].associate) {
+      db.models[modelName].associate(db.models);
     }
   });
 
