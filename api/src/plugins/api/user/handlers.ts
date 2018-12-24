@@ -5,14 +5,11 @@ import { IServerState } from "../../../interfaces";
 export async function getSelfData(request: Request) {
     const state = request.server.app as IServerState;
 
-    console.log(state.db.User);
+    const { User } = state.db;
 
-    return {
-        data: {
-            id: 1111,
-            profile: {
-                firstName: "Vasya",
-            },
-        },
-    };
+    const user = await User.create({
+        name: "vasya",
+    });
+
+    return user.toJSON();
 }

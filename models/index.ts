@@ -20,11 +20,11 @@ export const createModels = (sequelizeConfig: any): IDbInterface => {
     Exam: ExamFactory(sequelize, Sequelize),
   };
 
-  // Object.keys(db.model).forEach((modelName) => {
-  //   if (db.model[modelName].associate) {
-  //     db.model[modelName].associate(db);
-  //   }
-  // });
+  Object.keys(db).forEach((modelName) => {
+    if (db[modelName].associate) {
+      db[modelName].associate(db);
+    }
+  });
 
   return db;
 };
