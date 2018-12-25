@@ -43,7 +43,8 @@
     "@models": "dist/models/",
     "@models/User": "dist/models/User",
     "@models/Exam": "dist/models/Exam",
-    "@interfaces": "dist/interfaces/"
+    "@interfaces": "dist/interfaces/",
+    "@SequelizeAttributes": "dist/types/SequelizeAttributes"
   },
   "license": "MIT"
 }

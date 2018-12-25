@@ -12,7 +12,8 @@
             "@config": ["src/config"],
             "@models": ["src/models"],
             "@models/*": ["src/models/*"],
-            "@interfaces": ["src/interfaces"]
+            "@interfaces": ["src/interfaces"],
+            "@SequelizeAttributes": ["src/types/SequelizeAttributes"]
         }
     },
     "include": ["src/**/*"]
