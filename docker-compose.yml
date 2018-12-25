@@ -46,4 +46,13 @@ services:
       - 8081:8081
     logging:
       driver: none
+
+  mailhog:
+    restart: on-failure
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    logging:
+      driver: none
     

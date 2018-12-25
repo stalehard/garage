@@ -4,14 +4,9 @@ import { IServerState } from "@interfaces";
 
 export async function getSelfData(request: Request) {
     const state = request.server.app as IServerState;
+    const { mailer } = state.services;
 
-    const { User } = state.db.models;
+    await mailer.sendEmail("Vasya");
 
-    const user = await User.create({
-        name: "vasya",
-    });
-
-    await user.createExam();
-
-    return user.toJSON();
+    return {};
 }

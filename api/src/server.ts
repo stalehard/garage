@@ -2,15 +2,15 @@ import { IServerState } from "@interfaces";
 import { IDbInterface } from "@models";
 import Hapi from "hapi";
 import { plugins } from "./plugins";
+import initService from "./services";
 
 export async function init(config: Hapi.ServerOptions, db: IDbInterface): Promise<Hapi.Server> {
     const server = new Hapi.Server(config);
 
-    const state: IServerState = {
+    server.app = {
         db,
-    };
-
-    server.app = state;
+        services: initService(db),
+    } as IServerState;
 
     await server.register(plugins);
 
