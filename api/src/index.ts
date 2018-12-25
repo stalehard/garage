@@ -1,4 +1,5 @@
-require("module-alias/register");
+import resolvePath from "module-alias";
+resolvePath();
 
 import * as Configs from "@config";
 import { createModels } from "@models";

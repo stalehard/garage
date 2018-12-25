@@ -14,6 +14,7 @@
     "nodemon": "nodemon"
   },
   "dependencies": {
+    "@types/module-alias": "^2.0.0",
     "good": "^8.1.1",
     "hapi": "17.4.0",
     "hapi-swagger": "^9.3.0",
@@ -41,7 +42,7 @@
     "@config": "dist/config/",
     "@models": "dist/models/",
     "@models/User": "dist/models/User",
-    "@models/Exam": "dist/models/Exam",    
+    "@models/Exam": "dist/models/Exam",
     "@interfaces": "dist/interfaces/"
   },
   "license": "MIT"
