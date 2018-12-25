@@ -16,6 +16,8 @@
   "dependencies": {
     "@types/module-alias": "^2.0.0",
     "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.1.0",
     "hapi": "17.4.0",
     "hapi-swagger": "^9.3.0",
     "inert": "^5.1.2",
