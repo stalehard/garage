@@ -7,4 +7,6 @@ const initService = (db: IDbInterface) => {
     };
 };
 
+export type InitService<T> = (db: IDbInterface) => T;
+
 export default initService;

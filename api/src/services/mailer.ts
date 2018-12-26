@@ -1,22 +1,22 @@
 import { IMailer } from "@interfaces";
-import { IDbInterface } from "@models";
+import { InitService } from "./index";
 
-const initMailer = (db: IDbInterface) => {
-  return {
-        async sendEmail(text: string): Promise<void> {
-            const { User } = db.models;
+const initMailer: InitService<IMailer> = (db) => {
+  const service: IMailer = {
+    sendEmail: async (text: string) => {
+        const { User } = db.models;
 
-            const user = await User.create({
-                name: text,
-            });
+        const user = await User.create({
+            name: text,
+        });
+    },
 
-            console.log(`Send email: ${JSON.stringify(user.toJSON())}`);
-        },
+    renderEmail: (text: string) => {
+        return `email body text`;
+    },
+  };
 
-        renderEmail(text: string): string {
-            return `email body text`;
-        },
-  } as IMailer;
+  return service;
 };
 
 export default initMailer;
