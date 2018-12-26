@@ -1,6 +1,12 @@
-import Sequelize from "sequelize";
+import Sequelize, { DataTypeAbstract, DefineAttributeColumnOptions } from "sequelize";
 import {  ExamFactory, IExamAttributes, IExamInstance } from "./Exam";
 import {  IUserAttributes, IUserInstance, UserFactory } from "./User";
+
+type SequelizeAttribute = string | DataTypeAbstract | DefineAttributeColumnOptions;
+
+export type SequelizeAttributes<T extends { [key: string]: any }> = {
+  [P in keyof T]: SequelizeAttribute
+};
 
 export interface IDbInterface {
   sequelize: Sequelize.Sequelize;

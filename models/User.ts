@@ -1,6 +1,6 @@
-import { SequelizeAttributes } from "@SequelizeAttributes";
 import Sequelize from "sequelize";
 import { IExamAttributes, IExamInstance } from "./Exam";
+import { SequelizeAttributes } from "./index";
 
 export interface IUserAttributes {
   id?: number;

@@ -8,12 +8,6 @@
         "sourceMap": true,
         "outDir": "dist",
         "baseUrl": ".",
-        "paths": {
-            "@config": ["src/config"],
-            "@models": ["src/models"],
-            "@models/*": ["src/models/*"],
-            "@interfaces": ["src/interfaces"]
-        }
     },
     "include": ["src/**/*"]
 }
