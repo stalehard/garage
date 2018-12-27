@@ -64,9 +64,11 @@ services:
     depends_on:
       - db      
     volumes:
-      - ./devtools/src:/app/src
+      - ./devtools:/app
       - ./config:/app/src/config
-      - ./migrations:/app/src/migrations
+      - ./models:/app/src/models
+      - ./migrations:/app/migrations
+      - ./seeders:/app/seeders
     environment:
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}

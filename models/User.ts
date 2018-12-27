@@ -31,7 +31,9 @@ export const UserFactory = (sequelize: Sequelize.Sequelize, DataTypes: Sequelize
     },
   };
 
-  const User = sequelize.define<IUserInstance, IUserAttributes>("User", attributes);
+  const User = sequelize.define<IUserInstance, IUserAttributes>("user", attributes, {
+    timestamps: true,
+  });
 
   User.associate = (models) => {
     User.hasMany(models.Exam, { foreignKey: "userId", as: "exams" });

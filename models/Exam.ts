@@ -15,7 +15,9 @@ export const ExamFactory = (sequelize: Sequelize.Sequelize, DataTypes: Sequelize
   Sequelize.Model<IExamInstance, IExamAttributes> => {
   const attributes: SequelizeAttributes<IExamAttributes> = {};
 
-  const Exam = sequelize.define<IExamInstance, IExamAttributes>("Exam", attributes);
+  const Exam = sequelize.define<IExamInstance, IExamAttributes>("exam", attributes, {
+    timestamps: true,
+  });
 
   Exam.associate = (models) => {
     Exam.belongsTo(models.User, { as: "user", foreignKey: "userId" });

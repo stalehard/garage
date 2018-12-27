@@ -12,7 +12,7 @@ import * as Server from "./server";
 
         const db = createModels(Configs.getDbConfig());
 
-        await db.sequelize.sync();
+        await db.sequelize.sync({ force: true });
 
         const server = await Server.init(Configs.getServerConfig(), db);
 
