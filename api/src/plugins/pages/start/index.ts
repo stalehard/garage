@@ -2,9 +2,9 @@ import Hapi, { Plugin, ServerRegisterPluginObject } from "hapi";
 
 import routes from "./routes";
 
-const User: Plugin<void> = {
+const Start: Plugin<void> = {
     pkg: {
-        name: "user",
+        name: "start",
         version: "0.1.0",
     },
     register: (server: Hapi.Server) => {
@@ -13,7 +13,7 @@ const User: Plugin<void> = {
 };
 
 const plugin: ServerRegisterPluginObject<void> = {
-    plugin: User,
+    plugin: Start,
 };
 
 export default plugin;

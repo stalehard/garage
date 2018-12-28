@@ -2,7 +2,7 @@ import Hapi, { Plugin, ServerRegisterPluginObject } from "hapi";
 
 import User from "./user";
 
-const Api: Plugin<void> = {
+const Api: Plugin<any> = {
     pkg: {
         name: "api",
         version: "0.1.0",

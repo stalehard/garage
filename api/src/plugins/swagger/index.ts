@@ -2,12 +2,8 @@ import { ServerRegisterPluginObject } from "hapi";
 
 import * as HapiSwagger from "hapi-swagger";
 import * as Inert from "inert";
-import * as Vision from "vision";
 
 const plugins: Array<ServerRegisterPluginObject<any>> = [
-    {
-        plugin: Vision,
-    },
     {
         plugin: Inert,
     },

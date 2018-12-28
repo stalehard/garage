@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@types/module-alias": "^2.0.0",
+    "@types/mustache": "^0.8.32",
     "good": "^8.1.1",
     "good-console": "^7.1.0",
     "good-squeeze": "^5.1.0",
@@ -22,6 +23,7 @@
     "hapi-swagger": "^9.3.0",
     "inert": "^5.1.2",
     "module-alias": "^2.1.0",
+    "mustache": "^3.0.1",
     "pg": "^7.7.1",
     "sequelize": "^4.42.0",
     "vision": "^5.4.4"
