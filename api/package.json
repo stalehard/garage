@@ -7,11 +7,17 @@
   },
   "scripts": {
     "serve": "nodemon dist/index.js",
-    "start": "npm run tsc-watch & npm run serve",
-    "debug": "npm run tsc-watch & nodemon --inspect-brk=0.0.0.0:9229 dist/index.js",
+    "prod": "yarn migrate && yarn seed && node dist/index.js",
+    "start": "yarn tsc-watch & yarn serve",
+    "debug": "yarn tsc-watch & nodemon --inspect-brk=0.0.0.0:9229 dist/index.js",
     "tsc": "tsc",
     "tsc-watch": "tsc -w",
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "sequelize": "sequelize",
+    "seed": "sequelize db:seed:all",
+    "unseed": "sequelize db:seed:undo:all",
+    "migrate": "sequelize db:migrate",
+    "unmigrate": "sequelize db:migrate:undo:all"
   },
   "dependencies": {
     "@types/module-alias": "^2.0.0",
@@ -26,6 +32,7 @@
     "mustache": "^3.0.1",
     "pg": "^7.7.1",
     "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
     "vision": "^5.4.4"
   },
   "devDependencies": {

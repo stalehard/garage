@@ -1,9 +1,10 @@
-version: '3'
+version: "3"
 services:
   api:
-    build: 
+    container_name: garage_api
+    build:
       context: .
-      dockerfile: Dockerfile-api
+      dockerfile: api.Dockerfile
     depends_on:
       - db
     ports:
@@ -12,6 +13,8 @@ services:
       - ./api/src:/app/src
       - ./config:/app/src/config
       - ./models:/app/src/models
+      - ./migrations:/app/migrations
+      - ./seeders:/app/seeders
     command: ["yarn", "start"]
     environment:
       SERVER_NAME: ${SERVER_NAME}
@@ -24,6 +27,7 @@ services:
       DB_DATABASE: ${POSTGRES_DB}
 
   db:
+    container_name: garage_db
     restart: on-failure
     image: postgres:10-alpine
     environment:
@@ -36,6 +40,7 @@ services:
       - ./data/postgres-${APP_ENV}:/var/lib/postgresql/data
 
   pgweb:
+    container_name: garage_pgweb
     restart: on-failure
     image: sosedoff/pgweb
     depends_on:
@@ -48,6 +53,7 @@ services:
       driver: none
 
   mailhog:
+    container_name: garage_mailhog
     restart: on-failure
     image: mailhog/mailhog
     ports:
@@ -55,23 +61,3 @@ services:
       - 8025:8025
     logging:
       driver: none
-
-  devtools:
-    restart: on-failure
-    build: 
-      context: .
-      dockerfile: Dockerfile-devtools
-    depends_on:
-      - db      
-    volumes:
-      - ./devtools:/app
-      - ./config:/app/src/config
-      - ./models:/app/src/models
-      - ./migrations:/app/migrations
-      - ./seeders:/app/seeders
-    environment:
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_USER: ${POSTGRES_USER}
-      DB_PASSWORD: ${POSTGRES_PASSWORD}
-      DB_DATABASE: ${POSTGRES_DB}

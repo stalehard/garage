@@ -9,7 +9,6 @@
     "lint": "tslint -c tslint.json 'api/src/**/*.ts' --fix & tslint -c tslint.json 'config/*.ts' --fix & tslint -c tslint.json 'models/*.ts' --fix"
   },
   "dependencies": {
-    "@types/sequelize": "^4.27.33",
     "sequelize": "^4.42.0"
   },
   "author": {
