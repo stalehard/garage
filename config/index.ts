@@ -1,17 +1,11 @@
 import Hapi from "hapi";
-import path from "path";
 import Sequelize from "sequelize";
 
 const config = {
   server: {
     host: "0.0.0.0",
     port: +process.env.API_PORT || 8080,
-    routes: {
-      cors: true,
-      files: {
-        relativeTo: path.join(__dirname, "data/uploads"),
-      },
-    },
+    routes: {},
   },
   db: {
     database: process.env.DB_DATABASE,
