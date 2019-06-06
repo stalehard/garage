@@ -34,7 +34,8 @@
     "vision": "^5.4.4"
   },
   "resolutions": {
-    "js-yaml": "^3.13.1"
+    "js-yaml": "^3.13.1",
+    "handlebars": "4.0.14"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.1",
