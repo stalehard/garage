@@ -33,6 +33,9 @@
     "sequelize-cli": "^5.4.0",
     "vision": "^5.4.4"
   },
+  "resolutions": {
+    "js-yaml": "^3.13.1"
+  },
   "devDependencies": {
     "@types/bcryptjs": "2.4.1",
     "@types/boom": "7.2.0",
