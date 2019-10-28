@@ -9,7 +9,7 @@
     "lint": "tslint -c tslint.json 'api/src/**/*.ts' --fix & tslint -c tslint.json 'config/*.ts' --fix & tslint -c tslint.json 'models/*.ts' --fix"
   },
   "dependencies": {
-    "sequelize": "^4.42.0"
+    "sequelize": "^5.15.1"
   },
   "author": {
     "name": "Andrey Ivanov",
