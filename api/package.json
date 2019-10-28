@@ -29,7 +29,7 @@
     "module-alias": "^2.1.0",
     "mustache": "^3.0.1",
     "pg": "^7.7.1",
-    "sequelize": "^4.42.0",
+    "sequelize": "^5.15.1",
     "sequelize-cli": "^5.4.0",
     "vision": "^5.4.4"
   },
